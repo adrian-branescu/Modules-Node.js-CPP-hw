@@ -1,6 +1,6 @@
 # Node.js C++ Addons
 
-You will have to make an addon to expose in Node.js the [C++ library|https://github.com/adrian-branescu/Modules-Node.js-CPP-lab/tree/cpp-3/lab/cpp/my-sqrt-lib] used in class presentation.
+You will have to make an addon to expose in Node.js the [C++ library](https://github.com/adrian-branescu/Modules-Node.js-CPP-lab/tree/cpp-3/lab/cpp/my-sqrt-lib) used in class presentation.
 
 Make sure the binding works fine by calling `mysqrt` function from Javascript code.
 
