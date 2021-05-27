@@ -1,0 +1,6 @@
+# NPM related
+hw1/**/node_modules
+hw2/**/node_modules
+
+hw1/**/package-lock.json
+hw2/**/package-lock.json
