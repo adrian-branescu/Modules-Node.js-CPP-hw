@@ -1,3 +1,5 @@
+'use strict';
+
 const { Egg } = require('./Egg.js');
 
 class Chicken {

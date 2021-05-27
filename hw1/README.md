@@ -9,5 +9,12 @@ Besides the short description above you will also notice the difference between 
 
 Note that the cyclic dependency may happen often in real-life projects, although not desired. I chose to trigger an endless loop, but usually it's not the case - the cyclic dependency may be legit and benign in its nature.
 
-Q1: What difference do you observe and try to explain why this happens?
+Q1: What difference do you observe between the two and try to explain why this happens?
 
+A1:
+
+There is another major difference between the two formats regarding how the symbols exported by a module are consumed by its clients. In order to observe it, run the entry-points of the two live-binding modules.
+
+Q2: What difference do you observe between the two and try to explain why this happens?
+
+A2:

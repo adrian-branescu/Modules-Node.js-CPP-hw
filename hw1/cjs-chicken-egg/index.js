@@ -1,3 +1,5 @@
+'use strict';
+
 const { Chicken } = require('./Chicken.js');
 
 console.log('Trigger the chicken - egg endless loop ..');
