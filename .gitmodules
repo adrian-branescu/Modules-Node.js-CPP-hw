@@ -1,0 +1,3 @@
+[submodule "Modules-Node.js-CPP-lab"]
+	path = Modules-Node.js-CPP-lab
+	url = git@github.com:adrian-branescu/Modules-Node.js-CPP-lab.git
