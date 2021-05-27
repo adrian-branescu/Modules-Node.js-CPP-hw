@@ -11,10 +11,17 @@ Note that the cyclic dependency may happen often in real-life projects, although
 
 Q1: What difference do you observe between the two and try to explain why this happens?
 
-A1:
+A1: The CommonJS module cannot have both the chicken and the egg defined at the
+same time but the ES module can. This results in the ES modules creating an
+infinite call loop (which is the correct way to run given the functions) until
+it causes a stack overflow.
 
 There is another major difference between the two formats regarding how the symbols exported by a module are consumed by its clients. In order to observe it, run the entry-points of the two live-binding modules.
 
 Q2: What difference do you observe between the two and try to explain why this happens?
 
-A2:
+A2: The value changed only in the variable imported from the ES module. This is
+because changes made in the module (by the increment function) are visible to
+the module that imported the ES module. This was introduced in ESM and is
+called live binding and it's not true for CommonJS, hence we see the value "0"
+even after incrementing.
