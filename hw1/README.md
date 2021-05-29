@@ -11,10 +11,14 @@ Note that the cyclic dependency may happen often in real-life projects, although
 
 Q1: What difference do you observe between the two and try to explain why this happens?
 
-A1:
+A1: With CJS the programm is terminated with a warning and prints "Egg is first", while the ESM version creates an infinite loop. Allowing circular dependencies is an advantage of ESM because sometimes it's better not to automatically stop the programm, but to let the programmers decide. 
 
 There is another major difference between the two formats regarding how the symbols exported by a module are consumed by its clients. In order to observe it, run the entry-points of the two live-binding modules.
 
 Q2: What difference do you observe between the two and try to explain why this happens?
 
-A2:
+A2: ESM uses live bindings - which means that the variable change made by the exporting module is seen in the importing module as well. In the ESM example, the value for counter is incremented from 0 to 1 after the function call, while in the Commom JS example it remains 0 even after the function call.
+
+https://railsware.com/blog/how-to-analyze-circular-dependencies-in-es6/ 
+
+https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/
