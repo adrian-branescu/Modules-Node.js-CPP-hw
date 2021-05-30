@@ -11,10 +11,10 @@ Note that the cyclic dependency may happen often in real-life projects, although
 
 Q1: What difference do you observe between the two and try to explain why this happens?
 
-A1:
+A1: In the CJS case, it seems like only 1 level of recurrence is "rendered". When we ask the egg who was first, it tries to call the chicken, which requires another egg instance, which is not found. In the ESM case, all of the layers are taken care of. As a comparison, it seems like the CJS is inserting the code required once and that's it.
 
 There is another major difference between the two formats regarding how the symbols exported by a module are consumed by its clients. In order to observe it, run the entry-points of the two live-binding modules.
 
 Q2: What difference do you observe between the two and try to explain why this happens?
 
-A2:
+A2: In the CJS case, we get "0, 0" and in the EJS scenario we get "0, 1". I assume this is happening because CJS doesn't make a live connection between the files. It looks like it took the value from the required file, and from that point on, it acted like a different variable from the one inside the requred file (feels like 2 variables with the same purpose existed at the same time). Differently, EJS made a live link between the files, so when calling the function the variable modification spread to the entry point as well (since we are talking about the same variable in both places).
