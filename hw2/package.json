@@ -1,0 +1,14 @@
+{
+  "name": "ex2",
+  "version": "1.0.0",
+  "description": "You will have to make an addon to expose in Node.js the [C++ library](https://github.com/adrian-branescu/Modules-Node.js-CPP-lab/tree/cpp-3/lab/cpp/my-sqrt-lib) used in class presentation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-gyp": "^8.1.0"
+  }
+}
