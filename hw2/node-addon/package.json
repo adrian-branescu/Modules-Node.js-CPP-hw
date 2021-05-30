@@ -1,0 +1,20 @@
+{
+  "name": "node-addon",
+  "version": "1.0.0",
+  "description": "N-API is an API for building native Addons. N-API can be used to build NodeJS Addons using C or C++. And the addons built using this would not break across different implementations or versions of NodeJS.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node test.js",
+    "build": "node-gyp rebuild",
+    "build-debug": "npx node-gyp rebuild -d",
+    "clean": "node-gyp clean && rm -rf ./node_modules && rm package-lock.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "gypfile": true,
+  "dependencies": {
+    "node-addon-api": "^3.2.1",
+    "node-gyp": "^8.0.0"
+  }
+}
