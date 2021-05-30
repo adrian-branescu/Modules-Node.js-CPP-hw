@@ -11,10 +11,10 @@ Note that the cyclic dependency may happen often in real-life projects, although
 
 Q1: What difference do you observe between the two and try to explain why this happens?
 
-A1:
+A1: CommonJS format doesn't allow circular dependency while ESM allows them.
 
 There is another major difference between the two formats regarding how the symbols exported by a module are consumed by its clients. In order to observe it, run the entry-points of the two live-binding modules.
 
 Q2: What difference do you observe between the two and try to explain why this happens?
 
-A2:
+A2: For CommonJS the output for the first two logs was 0 0 while for ESM was 0 1 and after that both throws error at ++counter line . It seems that CommonJS treats exported symbols like constant values while ESM treats them like constant references.
