@@ -1,7 +1,7 @@
 {
   "name": "node-addon",
   "version": "1.0.0",
-  "description": "N-API is an API for building native Addons. N-API can be used to build NodeJS Addons using C or C++. And the addons built using this would not break across different implementations or versions of NodeJS.",
+  "description": "",
   "main": "lib/index.js",
   "scripts": {
     "test": "node test.js",

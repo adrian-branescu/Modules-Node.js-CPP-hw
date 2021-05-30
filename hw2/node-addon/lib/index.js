@@ -9,6 +9,5 @@ try {
 }
 
 module.exports.mysqrtFunction = (...args) => {
-    // yet another proxy later
     return binding.mysqrtFunction(...args);
 }
