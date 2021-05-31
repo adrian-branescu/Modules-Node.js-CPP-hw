@@ -11,10 +11,11 @@ Note that the cyclic dependency may happen often in real-life projects, although
 
 Q1: What difference do you observe between the two and try to explain why this happens?
 
-A1:
+A1: CommonJS doesn't allow both Chicken and Egg definitions at the same time triggering a chicken - egg endless loop but it provides a result, not ending with an error.
+ESM allows both definitions and when it tries to see "who was first" it goes in stack overflow because it creates an infinite call loop.
 
 There is another major difference between the two formats regarding how the symbols exported by a module are consumed by its clients. In order to observe it, run the entry-points of the two live-binding modules.
 
 Q2: What difference do you observe between the two and try to explain why this happens?
 
-A2:
+A2: ESM has output reference and CommonJS has output copy. This is why the value changes for ESM script and not also for the CommonJS script when calling increment(). Having an output refrence, for ESM, the changes in the internal reference will be reflected externally.
