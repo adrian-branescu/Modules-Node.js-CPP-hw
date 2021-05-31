@@ -11,10 +11,10 @@ Note that the cyclic dependency may happen often in real-life projects, although
 
 Q1: What difference do you observe between the two and try to explain why this happens?
 
-A1:
+A1: In the `esm-*` examples the cyclic dependency causes stack overflow, meanwhile in the `cjs-*` examples the cyclic dependency outputs `Egg was first`. My guess is that this is because the commonjs modules are immediately being run(the `require` is synchronous), and by the time `Egg.whoWasFirst` is called the `Chicken` class hasn't yet fully been interpreted and is undefined.
 
 There is another major difference between the two formats regarding how the symbols exported by a module are consumed by its clients. In order to observe it, run the entry-points of the two live-binding modules.
 
 Q2: What difference do you observe between the two and try to explain why this happens?
 
-A2:
+A2: The esm example outputs `0 1` and then a `TypeError`, the `cjs` examples outputs `0 0` and the a `TypeError`. I'd say this is because the commonjs module doesn't actually have a global variable, and the `x` will be local the `index.js` file.
