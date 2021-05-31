@@ -11,10 +11,11 @@ Note that the cyclic dependency may happen often in real-life projects, although
 
 Q1: What difference do you observe between the two and try to explain why this happens?
 
-A1:
+A1: The CommonJS version outputs "Asking the Egg; typeof Chicken is undefined; Egg was first", while the ESM version enters in an infinite loop, printing "Asking the Chicken; Asking the Egg; Asking the Chicken; Asking the Egg" and so on.
+	The problem with CommonJS is that Chicken requires Egg and requires Chicken, resulting in an undefined Chicken. On the other hand, the ESM version can have both the Chicken and the Egg defined at the same time, enabling the desired endless loop.
 
 There is another major difference between the two formats regarding how the symbols exported by a module are consumed by its clients. In order to observe it, run the entry-points of the two live-binding modules.
 
 Q2: What difference do you observe between the two and try to explain why this happens?
 
-A2:
+A2: The CommonJS version outputs "0; 0", while the ESM version outputs "0; 1". The increment succeeds in the latter due to live bindings, a concept introduced in ESM, providing a common memory address for both exporter and importer. In CommonJS module exports are simply copied, hiding changes made, like the increment in the given example.
