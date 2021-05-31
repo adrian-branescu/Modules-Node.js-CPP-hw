@@ -1,0 +1,13 @@
+{
+  "name": "mymath",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "dependencies": {
+    "node-addon-api": "^3.2.1",
+    "node-gyp": "^8.1.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "gypfile": true
+}
