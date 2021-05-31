@@ -42,7 +42,7 @@ A2: In the CommonJS example, we can see that the program returns:
 
     0
     0
-    ++counter; TypeError: Assiment to constant variable
+    ++counter; TypeError: Assignment to constant variable.
 
 This happens because importing modules cannot see changes 
 happened on the exporter side(the variables are copies of the original ones) 
@@ -51,7 +51,7 @@ In ESM when the exporting module changes a value, the change will be  visible fr
 
     0
     1
-    ++counter; TypeError: Assiment to constant variable
+    ++counter; TypeError: Assignment to constant variable.
 
 
 
