@@ -11,10 +11,10 @@ Note that the cyclic dependency may happen often in real-life projects, although
 
 Q1: What difference do you observe between the two and try to explain why this happens?
 
-A1:
+A1: in cjs we get an undefined error, because when we require Chicken in egg we get undefined because the Chicken is never evaluated, while due to live binding we get an infinte loop in the esm version
 
 There is another major difference between the two formats regarding how the symbols exported by a module are consumed by its clients. In order to observe it, run the entry-points of the two live-binding modules.
 
 Q2: What difference do you observe between the two and try to explain why this happens?
 
-A2:
+A2: In CJS we try to increment a constant variable and it gives us an error and the output is 0 0, in esm the same thing happens but the output is 0 1 because , in ESM we use the same memory for exported and imported variables, unlike cjs where we just copy them
