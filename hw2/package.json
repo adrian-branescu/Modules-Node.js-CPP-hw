@@ -1,0 +1,14 @@
+{
+  "name": "tema4",
+  "version": "0.0.0",
+  "description": "Node.js c++ sqrt",
+  "main": "main.js",
+  "private": true,
+  "dependencies": {
+    "bindings": "~1.2.1"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "gypfile": true
+}

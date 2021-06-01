@@ -1,0 +1,1 @@
+cmd_Release/obj.target/mysqrt.node := g++ -o Release/obj.target/mysqrt.node -shared -pthread -rdynamic -m64  -Wl,-soname=mysqrt.node -Wl,--start-group Release/obj.target/mysqrt/src/mySqrt.o -Wl,--end-group 
