@@ -11,10 +11,11 @@ Note that the cyclic dependency may happen often in real-life projects, although
 
 Q1: What difference do you observe between the two and try to explain why this happens?
 
-A1:
+A1:In first sight I see that cjs stops it's loop because the "chicken" is undefined, why so ? , because chicken module has been used at the first call, now it can't be reused ,so egg is defined asks the egg and then, when trying to ask the ccken again it can't be valod ,because the cicken module is invalidated.
+Esm can do this thing and the loop continues to infinity.
 
 There is another major difference between the two formats regarding how the symbols exported by a module are consumed by its clients. In order to observe it, run the entry-points of the two live-binding modules.
 
 Q2: What difference do you observe between the two and try to explain why this happens?
 
-A2:
+A2:As I see ,using cjs module the required counter remains constant even after calling the increment function from the module whereas the the esm module imported counter is updated live in the present module.
