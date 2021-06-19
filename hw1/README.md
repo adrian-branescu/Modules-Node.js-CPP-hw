@@ -11,10 +11,10 @@ Note that the cyclic dependency may happen often in real-life projects, although
 
 Q1: What difference do you observe between the two and try to explain why this happens?
 
-A1:
+A1: In CommonJS, when we ask the chicken, the egg is not undefined so we ask the egg, but in the egg, the chicken is undefined so the egg says it was first. In ESM, when we ask the chicken, the egg is not undefined so we ask the egg. In the egg, the chicken is also not undefined so we ask the chicken and the cycle repeats. It seems that ESM allows 2 modules to reference one another until the stack is full and CommonJS doesn't allow model B to reference module A after module A has already referenced module B.
 
 There is another major difference between the two formats regarding how the symbols exported by a module are consumed by its clients. In order to observe it, run the entry-points of the two live-binding modules.
 
 Q2: What difference do you observe between the two and try to explain why this happens?
 
-A2:
+A2: In ESM, the counter gets updated after increment is called, while in CommonJS the counter doesn't change its value (0). Both throw an error when the line "++counter" is executed. It seems that in ESM the object imported is passed as a refference, so the updates in the exporting module are visible in the importing module too, while in CommonJS only the value of the object is passed, so updates in the exporting module are not reflected in the importing module.
