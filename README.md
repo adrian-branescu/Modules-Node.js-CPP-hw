@@ -1,5 +1,10 @@
 # Homework
 
+In order to also clone the git submodule referenced inside this repo use:
+```bash
+git clone --recursive <repo-url>
+```
+
 In order to build the container image:
 ```bash
 docker build -t node-hw .
