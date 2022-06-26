@@ -1,11 +1,25 @@
-# Node.js C++ Addons
+# Build - Install - Test C++ Shared Library
 
-You will have to make an addon to expose in Node.js the [C++ library](https://github.com/adrian-branescu/Modules-Node.js-CPP-lab/tree/cpp-3/lab/cpp/my-sqrt-lib) used in class presentation.
+## CMake
 
-Make sure the binding works fine by calling `mysqrt` function from Javascript code.
+Run the cmake executable to configure the project:
+```bash
+# create build dir
+mkdir -p build
 
-As a starting point, you should read https://nodejs.org/docs/latest/api/addons.html
+# go to build dir (which should be added to .gitignore) to not pollute the repo with generated build config files
+cd build
 
-Note that there are multiple ways of achieving this, but you must use Node-API (or N-API), not Native Abstractions for Node.js (or nan), nor directly V8 API.
+# run cmake with path to CMakeLists.txt
+cmake ..
+```
 
-N-API is the official recommended way to build C++ Addons and abstracts away API changes that happen when updating Node.js to a newer version (and implicitly the V8 engine).
+Call the generated Makefile to actually compile (& link) the project:
+```bash
+make -j<number-of-cores>
+```
+
+Install the shared library to system shared libraries search paths
+```bash
+make install
+```
