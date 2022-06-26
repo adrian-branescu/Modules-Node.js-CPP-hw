@@ -11,10 +11,11 @@ Note that the cyclic dependency may happen often in real-life projects, although
 
 Q1: What difference do you observe between the two and try to explain why this happens?
 
-A1:
+A1: The ESM module triggers the loop and the loop goes on until the stack overflows and a RangeError is returned, whereas the commonJS module
+exits the loop immediately with a warning. The warning states that there's an attempt to access a non existing property of module exports, because the Chicken class is not instantiated. The cjs module has a better behaviour in this context because usually these cyclic dependencies are not desired and need to be fixed, so the module gives a warning and gets out ot the infinite loop.
 
 There is another major difference between the two formats regarding how the symbols exported by a module are consumed by its clients. In order to observe it, run the entry-points of the two live-binding modules.
 
 Q2: What difference do you observe between the two and try to explain why this happens?
 
-A2:
+A2: ESM imports variables of any type as constants, therefore their value cannot be changed directly so we need to export a function that is imported in the script where the variable change is needed. This is not the case when using a cjs module, where a value can be changed directly if importing it with the 'let' keyword, but calling a function that changes the value defined in the foreign (imported) script does nothing.
